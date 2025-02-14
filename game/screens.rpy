@@ -256,12 +256,12 @@ screen quick_menu():
 #
             textbutton _("Back") action Rollback()
 #            textbutton _("History") action ShowMenu('history')
-#            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-#            textbutton _("Auto") action Preference("auto-forward", "toggle")
-#            textbutton _("Save") action ShowMenu('save')
+            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+            textbutton _("Auto") action Preference("auto-forward", "toggle")
+            textbutton _("Save") action ShowMenu('save')
 #            textbutton _("Q.Save") action QuickSave()
 #            textbutton _("Q.Load") action QuickLoad()
-#            textbutton _("Prefs") action ShowMenu('preferences')
+            textbutton _("Prefs") action ShowMenu('preferences')
 #
 #
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -607,7 +607,7 @@ screen about():
             xsize 990
             xalign 0.5 yalign 0.5
             text _("\n")
-            text _("Story: Arief, Kajew")
+            text _("Story: Arief")
             text _("Programmer: Arief")
             text _("Character Design: Arief")
             text _("Audio: {a=https://pixabay.com/}Pixabay{/a}, {a=https://suno.com/}Suno{/a}")

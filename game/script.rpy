@@ -227,7 +227,6 @@ label part2:
     show i4 at right:
         zoom 0.46 xalign 0.97 yalign 0.39
     k "Gawat!! di lorong sudah pada sepi saya harus masuk ke kelas sekarang"
-    hide i4
     show t4 at left:
         zoom 0.46 yalign 0.39
     t "Eh, kamu telat itsuka?"
@@ -238,18 +237,17 @@ label part2:
         zoom 0.46 xalign 0.97 yalign 0.39
     k "Iya aku sedikit telat tohka. Halo juga suna"
     hide t4
-    with dissolve
     hide s6
-    with dissolve
     show s4 at left:
         zoom 0.46 xalign 0.09 yalign 0.39
     s "Aku baru pertama kali melihat kamu telat ke sekolah, apa yang membuat kamu telat itsuka?"
     hide i3
-    hide s4
     show i2 at right:
         zoom 0.46 xalign 0.97 yalign 0.39
     k "Itu rahasia, ceritanya panjang"
-    hide i2
+    hide i4
+    show i6 at right:
+        zoom 0.46 xalign 0.97 yalign 0.39
     show s3 at left:
         zoom 0.46 xalign 0.09 yalign 0.39
     s "Kamu selalu bilang seperti itu saat aku bertanya!!, tapi giliran sama tohka kamu selalu saja asik berduaan"
@@ -258,6 +256,7 @@ label part2:
         zoom 0.46 xalign 0.09 yalign 0.39
     s "Lebih baik aku ke kelas aja deh gak mau jadi nyamuk, dah aku duluan"
     hide s5
+    hide s4
     with dissolve
     show i4 at right:
         zoom 0.46 xalign 0.97 yalign 0.39
@@ -267,11 +266,9 @@ label part2:
         zoom 0.46 xalign 0.09 yalign 0.39
     t "Entahlah, aku juga tidak tau kenapa suna akhir-akhir ini suka menjauh dari kita"
     t "Aku pikir dia cemburu kalau kita sering asik berduaan itsuka"
-    hide t6
     show i2 at right:
         zoom 0.46 xalign 0.97 yalign 0.39
     k "Bisa jadi, sudahlah biarkan saja"
-    hide i2
     show t4 at left:
         zoom 0.46 xalign 0.09 yalign 0.39
     t "Mari masuk ke kelas itsuka, guru sudah ada didalam kelas"
@@ -282,28 +279,26 @@ label part2:
     hide i4
     show t4 at left:
         zoom 0.46 xalign 0.09 yalign 0.39
-    t "Iya sudah ada, makanya cepat masuk nanti kamu bisa kena hukuman loh itsuka"
+    t "Iya sudah ada, makanya cepat masuk nanti kamu bisa ketinggalan pelajaran loh"
     hide t4
     show i5 at right:
         zoom 0.46 xalign 0.97 yalign 0.39
-    k "Aduh!! jangan sampai aku kena hukuman lagi, aku langsung masuk ke kelas aja deh"
+    k "Aduh!! semoga saja pelajaran nya belum di mulai, aku langsung masuk ke kelas aja deh"
     hide i5
-    with dissolve
     hide t2
-    with dissolve
     menu:
-        "Yakin kamu ingin masuk ke kelas atau ingin kena hukuman?"
+        "Yakin kamu ingin masuk ke kelas dan mulai pelajaran atau ingin bolos?"
         "Masuk ke kelas":
             play sound "click.ogg"
             scene klas
             with fade
             show i6 at left:
                 zoom 0.46 xalign 0.09 yalign 0.39
-            k "Untung saja aku gak kena hukuman lagi, tapi semua baik-baik saja sih"
+            k "Untung saja pelajaran nya belum di mulai jadi gak ketinggalan materi"
             hide i6
             show i2 at left:
                 zoom 0.46 xalign 0.09 yalign 0.39
-            k "Kebetulan pelajaranya baru dimulai sekarang"
+            k "Kebetulan pelajaranya baru dimulai sekarang dan aku harus fokus"
             hide i2
             $rajin +=1
         "Bolos ke toilet":
@@ -327,13 +322,13 @@ label part2:
             $pemalas +=1
     scene black
     stop music
-    "MARI KITA SELESAIKAN PUZZLE NYA!!"
-    image whole = "restoran1.jpg"
+    "MARI KITA MULAI PELAJARAN NYA!!"
+    image whole = "math1.jpg"
     image whole1 = "Lose.png"
     play music "love.mp3"
     scene klas
     python:
-        pajel = im.Composite((650, 450),(25, 25), "restoran1.jpg")
+        pajel = im.Composite((650, 450),(25, 25), "math.jpg")
         piecelist = dict()
         imagelist = dict()
         placedlist = dict()
@@ -350,14 +345,14 @@ label menang:
     show whole at Position(xalign=0.5,yalign=0.5)
     stop music
     play sound "victory.mp3"
-    "PUZZLE BERHASIL TERPECAHKAN"
+    "RUMUS BERHASIL TERPECAHKAN"
     stop sound
     $rajin +=1
     jump part3
 
 label kalah:
     scene black
-    show whole1 at Position(xalign=0.5,yalign=0.5)
+    show whole1 at Position(xalign=0.5,yalign=0.3)
     play sound "gagal.mp3"
     $pemalas +=1
     menu:
@@ -387,6 +382,7 @@ label part3:
     show i6 at right:
         zoom 0.46 xalign 0.97 yalign 0.39
     k "Yah!! kucing nya sudah pergi padahal mau aku pelihara"
+
 
 
 
